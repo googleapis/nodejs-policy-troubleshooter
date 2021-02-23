@@ -13,8 +13,7 @@
 
 'use strict';
 const {authenticate} = require('@google-cloud/local-auth');
-const keyfilePath =
-  '/Users/sofialeon/Downloads/client_secret_204535198706-a44qeclp37upo4oedm3p46ksckt6k587.apps.googleusercontent.com (1).json';
+
 async function main(principal, fullResourceName, permission) {
   // [START nodejs_policy_troubleshooter_quickstart]
   // Imports the Google Cloud client library
@@ -24,6 +23,7 @@ async function main(principal, fullResourceName, permission) {
 
   // TODO(developer): replace with your prefered project ID.
   // const projectId = 'my-project'
+  // const keyFilePath = 'my-key-file-path'
 
   const options = {
     keyfilePath,
@@ -33,7 +33,7 @@ async function main(principal, fullResourceName, permission) {
   // Creates a client
   const client = new IamCheckerClient(authenticate(options));
 
-  async function doSomething() {
+  async function troubelshootPolicy() {
     const policy = await client.troubleshootIamPolicy({
       accessTuple: {
         principal,
@@ -43,7 +43,7 @@ async function main(principal, fullResourceName, permission) {
     });
     console.log(policy);
   }
-  doSomething();
+  troubelshootPolicy();
   // [END nodejs_policy_troubleshooter_quickstart]
 }
 
