@@ -12,26 +12,18 @@
 //
 
 'use strict';
-const {authenticate} = require('@google-cloud/local-auth');
 
-async function main(principal, fullResourceName, permission, keyfilePath) {
+async function main(principal, fullResourceName, permission) {
   // [START nodejs_policy_troubleshooter_quickstart]
-  // Imports the Google Cloud client library
 
-  // eslint-disable-next-line node/no-missing-require
+  // Imports the Google Cloud client library
   const {IamCheckerClient} = require('@google-cloud/policy-troubleshooter');
 
   // TODO(developer): replace with your prefered project ID.
   // const projectId = 'my-project'
-  // const keyFilePath = 'my-key-file-path'
-
-  const options = {
-    keyfilePath,
-    scopes: ['https://www.googleapis.com/auth/cloud-platform'],
-  };
 
   // Creates a client
-  const client = new IamCheckerClient(authenticate(options));
+  const client = new IamCheckerClient();
 
   async function troubelshootPolicy() {
     const policy = await client.troubleshootIamPolicy({
@@ -43,6 +35,7 @@ async function main(principal, fullResourceName, permission, keyfilePath) {
     });
     console.log(policy);
   }
+
   troubelshootPolicy();
   // [END nodejs_policy_troubleshooter_quickstart]
 }
