@@ -14,7 +14,7 @@
 'use strict';
 const {authenticate} = require('@google-cloud/local-auth');
 
-async function main(principal, fullResourceName, permission) {
+async function main(principal, fullResourceName, permission, keyfilePath) {
   // [START nodejs_policy_troubleshooter_quickstart]
   // Imports the Google Cloud client library
 
