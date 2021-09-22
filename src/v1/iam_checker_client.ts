@@ -335,6 +335,10 @@ export class IamCheckerClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.troubleshootIamPolicy(request);
+   *
+   * @example <caption>include:samples/generated/v1/iam_checker.troubleshoot_iam_policy.js</caption>
+   * region_tag:policytroubleshooter_troubleshoot_iam_policy_sample
+   *
    */
   troubleshootIamPolicy(
     request?: protos.google.cloud.policytroubleshooter.v1.ITroubleshootIamPolicyRequest,
