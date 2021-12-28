@@ -12,5 +12,5 @@
   "name": "policytroubleshooter",
   "issue_tracker": "https://github.com/googleapis/nodejs-policy-troubleshooter/issues",
   "api_shortname": "policytroubleshooter",
-  "library_type": ""
+  "library_type": "GAPIC_AUTO"
 }
